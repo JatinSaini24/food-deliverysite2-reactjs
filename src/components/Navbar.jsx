@@ -10,9 +10,10 @@ const Navbar = () => {
   let{input,setInput,setCate,setShowCart}=useContext(dataContext)
   useEffect(()=>{
     let newlist = foodItems.filter((item) =>
-  item.name?.includes(input)||item.food_name?.toLowerCase().includes(input))
+    item.name?.toLowerCase().includes((input || "").toLowerCase())
+    )
     setCate(newlist)
-  },[input])
+  },[input, setCate])
   let items=useSelector(state=>state.cart)
   console.log(items);
   return (
