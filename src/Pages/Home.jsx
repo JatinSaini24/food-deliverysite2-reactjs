@@ -46,7 +46,7 @@ function Home() {
   </div>
 ) : null}
         <div className='w-full flex flex-wrap gap-5 px-5 justify-center items-center pt-8 pb-8'>
-          {cate.length>1?   cate.map((item)=>(
+          {cate.length>1? cate.map((item)=>(
             <Card
             key={item.id}
             id={item.id}
