@@ -7,7 +7,7 @@ import { foodItems } from './Food/food';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  let{input,setInput,cate,setCate,showCart,setShowCart}=useContext(dataContext)
+  let{input,setInput,setCate,setShowCart}=useContext(dataContext)
   useEffect(()=>{
     let newlist = foodItems.filter((item) =>
   item.name?.includes(input)||item.food_name?.toLowerCase().includes(input))
