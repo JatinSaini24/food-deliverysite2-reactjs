@@ -5,14 +5,14 @@ import { DecrementQty, IncrementQty, RemoveItem } from '../Redux/cartSlice';
 const Card2 = ({ name, id, price, image, qty }) => {
   let dispatch =useDispatch()
   return (
-    <div className='w-full h-[120px]  p-2 shadow-lg flex justify-between'>
-     <div className='w-[60%] h-full flex gap-5'>
+    <div className='w-full min-h-[120px] p-2 shadow-lg flex justify-between'>
+    <div className='w-[60%] h-full flex gap-2 md:gap-5'>
         <div className='w-[60%] h-full overflow-hidden  rounded-lg p-0 m-0'>
             <img src={image} alt=""   className='w-full h-full block object-cover object-center'/>
         </div>
         <div className='w-[40%] h-full flex flex-col gap-3'>
-           <div className='text-lg text-gray-600 font-semibold'>{name}</div>
-           <div className='w-[110px] h-[50px] bg-slate-400 flex rounded-lg overflow-hidden shadow-lg font-semibold border-2 border-green-400 text-xl'>
+        <div className='text-sm md:text-lg text-gray-600 font-semibold break-words'>{name}</div>
+        <div className='w-[110px] min-w-[110px] h-[50px] bg-slate-400 flex rounded-lg overflow-hidden shadow-lg font-semibold border-2 border-green-400 text-xl'>
            <button className='w-[30%] h-full bg-white flex justify-center  items-center text-green-400 hover:bg-gray-200' onClick={()=>{dispatch(IncrementQty(id))}}>+</button>
            <span className='w-[40%] h-full bg-slate-300 flex justify-center items-center text-green-400'>{qty}</span>
            <button className='w-[30%] h-full bg-white flex justify-center  items-center text-green-400 hover:bg-gray-200' onClick={()=>{ if(qty>1){dispatch(DecrementQty(id));}}}>-</button>
